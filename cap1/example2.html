@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div class="siteMain" id="container">
+<div class="header" id="header">
+<div id="banner" class="banner">
+The Simpler Times Gourmet
+</div>
+<div id="cart" class="cart"></div>
+</div>
+<div id="content" class="content"></div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="welcomeMessage.js"></script>
+<script src="CartStatus.js"></script>
+<script>
+$(document).ready(function() {
+	$("#content").html(getWelcomeMessage());
+	$("#cart").html(getStatusMessage());
+});
+</script>
+</body>
+</html>
