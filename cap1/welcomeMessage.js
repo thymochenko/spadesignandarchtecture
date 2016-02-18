@@ -1,31 +1,36 @@
-var customerLoggedIn = true;
-var customerName = "Emmit"; 
-var isNewCustomer = false;
+STGourmet.welcomeMessage = (function() {
+	function getStatus(){
+		if(STGourmet.customer.isLoggedIn()){
+			if(STGourmet.customer.isNew()){
+				return "new";
+			} else {
+				return "existing";
+			}
+		} else {
+			return "unknown";
+		}
+	}
+	
+	function getWelcomeMessage() {
+		if(getStatus() !== "unknown" ) {
+			if(getStatus() === "existing" ) {
+				return "Hi again " + STGourmet.customer.getName()
+				+ ", glad to see you back!";
+			} else {
+				return "Welcome "
+				+ STGourmet.customer.getName()
+				+ " - 25% off entire purchase!";
+			}
+		} else {
+			return "Sign up for some great gourmet deals!";
+		}
+	}
 
-function getStatus(){
-	if(customerLoggedIn){
-		if(isNewCustomer){
-			return "new";
-		}
-		else {
-			return "existing";
-		}
+	function showGreeting(){
+		$("#content").html(getWelcomeMessage());
 	}
-	else{
-		return "unknown";
-	}
-}
-
-function getWelcomeMessage(){
-	if(getStatus !== "unknown"){
-		if(getStatus == "existing"){
-			return "Ola nomavente" + customerName + "parabens por voltar";
-		}
-		else{
-			return "Bem vindo" + customerName + "25% em qualquer compra";
-		}
-	}
-	else{
-		return "Faça login para saber os detalhes de compra";
-	}
-}
+	
+	return {
+		showGreeting : showGreeting
+	};
+})();

@@ -1,6 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+body {
+
+	margin: 0;
+
+	padding: 0 0 1em 0;
+
+	background-color: #ededed;
+
+}
+
+
+
+.header {
+
+	padding: .5em 1em;
+
+	background-color: whiteSmoke;
+
+	border-bottom: solid #6AC5AC 3px;
+
+	position: relative;
+
+	height: 50px;
+
+}
+
+
+
+.banner {
+
+	color: #8F8F8F;
+
+	font-size: 2.5em;
+
+	font-family: Georgia;
+
+	text-align: center;
+
+	float: left;
+
+	width: 100%;
+
+}
+
+
+
+.cart {
+
+	font-size: 9pt;
+
+	font-family: Georgia;
+
+	text-align: center;
+
+	position:absolute;
+
+	right: 50;
+
+}
+
+
+
+.content {
+
+	font-size: 1.5em;
+
+	font-family: Georgia;
+
+	text-align: center;
+
+}
+</style>
 </head>
 <body>
 <div class="siteMain" id="container">
@@ -13,13 +86,12 @@ The Simpler Times Gourmet
 <div id="content" class="content"></div>
 </div>
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="STGourmet.js"></script>
 <script src="welcomeMessage.js"></script>
+<script src="customer.js"></script>
 <script src="CartStatus.js"></script>
 <script>
-$(document).ready(function() {
-	$("#content").html(getWelcomeMessage());
-	$("#cart").html(getStatusMessage());
-});
+	STGourmet.init();
 </script>
 </body>
-</html>
+</html>	
