@@ -1,12 +1,12 @@
 //namespace
 var STGourmet = (function($){
 	function init(){
-		$(document). ready(function(){
+		$(document).ready(function(){
 			//submodules
 			STGourmet.shoppingCart.displayStatus();
-			STGourmet.welcomeMessage.showGretting();
+			STGourmet.welcomeMessage.showGreeting();
 		});
 	}
 	return {init: init};
 	
-})(JQuery);
+})(jQuery);
